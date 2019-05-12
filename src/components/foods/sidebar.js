@@ -1,9 +1,13 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
+import propsType from 'prop-types'
+import { getEvent } from '../../utils'
 
 import '../styles/sidebar.less'
 
-class Sidebar extends Component {
+const myEvent = getEvent()
+
+class SideBar extends Component {
   constructor() {
     super(...arguments)
     this.state = {
@@ -40,6 +44,13 @@ class Sidebar extends Component {
     return 'nav-text ' + actived
   }
 
+  handleNavlist(navActive) {
+    this.setState({ navActive }, () => {
+      this.props.onchangeNavList(navActive)
+    })
+    myEvent.emit('changeNav')
+  }
+
   render () {
     const { navList, navActive } = this.state
     return (
@@ -49,7 +60,8 @@ class Sidebar extends Component {
             const { id, name } = item
             return <Text
               key={id}
-              className={this.navListClassName(navActive === id)}>
+              className={this.navListClassName(navActive === id)}
+              onClick={this.handleNavlist.bind(this, id)}>
               { name }
             </Text>
           })
@@ -59,4 +71,12 @@ class Sidebar extends Component {
   }
 }
 
-export default Sidebar
+SideBar.defaultProps = {
+  onchangeNavList: () => {}
+}
+
+SideBar.propsType = {
+  onchangeNavList: propsType.func
+}
+
+export default SideBar

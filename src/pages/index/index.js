@@ -5,6 +5,7 @@ import './index.less'
 // import Child from './Child'
 import Header from '../../components/header/header'
 import Foods from '../../components/foods/foods'
+import Footer from '../../components/footer/footer'
 
 export default class Index extends Component {
 
@@ -50,6 +51,7 @@ export default class Index extends Component {
           onchangeProps={this.changeChildProps.bind(this)}/> */}
         <Header></Header>
         <Foods></Foods>
+        <Footer></Footer>
       </View>
     )
   }

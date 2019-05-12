@@ -47,7 +47,7 @@ class Activity extends Component {
       <View className="activity-wrap">
         <Text className="activity-type">{ this.getActivityType(firstItem.type) }</Text>
         <Text className="activity-info">{ this.getActivityInfo(firstItem.info) }</Text>
-        <Text className="activity-nums">三个活动</Text>
+        <Text className="activity-nums">{ firstItem.info.length }个活动</Text>
       </View>
     )
   }

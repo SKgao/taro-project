@@ -26,7 +26,6 @@ class Header extends Component {
         <Image className="main-bg" src={require('../../assets/img/back.jpg')}/>
         <View className="stroe-wrap">
           <Image className="stroe-img" src={require('../../assets/img/store.jpg')}/>
-
           <View className="stroe-text">
             <Text className="stroe-title-text">{ store.title }</Text>
             <Text>{ store.notice }</Text>
