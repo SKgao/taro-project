@@ -7,13 +7,13 @@ npm install
 ```
 
 ```
-npm run dev:h5
+npm run dev:h5 or npm run dev:weapp
 ```
 
 ### build project
 
 ```
-npm run build:h5
+npm run build:h5 or npm run build:weapp
 ```
 
 #### 目录结构
